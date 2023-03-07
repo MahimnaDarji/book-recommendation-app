@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+
+
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/frontpage_style.css" />
+  <title>Trending Books</title>
+</head>
+
+<body style="background-color:#606060;">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark fixed-top">
+     <h5 style="font-size:35px;color:white;font-family: 'Trebuchet MS', sans-serif;" class="my-0 mr-md-auto font-weight-normal">The Reading Room</h5><h4 style="font-size:20px;margin-left:-88px;color:white;font-family: 'Trebuchet MS', sans-serif;" class="my-0 mr-md-auto font-weight-normal">The Next Generation Book Recommendation System</h4>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/home">Home</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/trendingbooks">Trending Books</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/browse">Recommendations</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/contactus">Contact Us</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="/logout" style="color:white;font-family:'Trebuchet MS', sans-serif;">Log Out</a>
+</div>
+<h1 style="text-align:center;color:yellow;font-size:40px;font-family: 'Trebuchet MS', sans-serif;margin-top:80px">Top 50 Popular Books</h1>
+ <div class="container">
+        <div class="row">
+            {% for i in range(book_name|length) %}
+                <div class="col-md-3" style="margin-top:10px">
+                    <div class="card bg-dark" style="height:430px;width:260px;">
+                        <div class="card-body">
+                            <img class="card-img-top" src="{{ image[i] }}" height="200" width="200">
+                            <p style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;">{{ book_name[i] }}</p>
+                            <h4 style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;">Author - {{ author[i] }}</h4>
+                            <h4 style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;">Votes - {{ votes[i] }}</h4>
+                            <h4 style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;">Rating - {{ rating[i] }}</h4>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>

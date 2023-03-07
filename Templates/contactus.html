@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/frontpage_style.css" />
+  <title>Contact Us</title>
+</head>
+
+<body style="background-color:#606060;">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark fixed-top">
+     <h5 style="font-size:35px;color:white;font-family: 'Trebuchet MS', sans-serif;" class="my-0 mr-md-auto font-weight-normal">The Reading Room</h5><h4 style="font-size:20px;margin-left:-105px;color:white;font-family: 'Trebuchet MS', sans-serif;" class="my-0 mr-md-auto font-weight-normal">The Next Generation Book Recommendation System</h4>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/home">Home</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/trendingbooks">Trending Books</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/browse">Recommendations</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/contactus">Contact Us</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="/logout" style="color:white;font-family:'Trebuchet MS', sans-serif;">Log Out</a>
+</div>
+<h1 style="text-align:center;color:yellow;font-size:40px;font-family: 'Trebuchet MS', sans-serif;margin-top:80px">Contact Us Page</h1>
+<!--Start Contact Us-->
+<div class="container mt-4" id="Contact">
+  <!--Start Contact Us Container-->
+  <div class="row">
+    <div class="col-md-8">
+      <form action="" method="post">
+        <input type="text" class="form-control" name="name" placeholder="Name"><br>
+        <input type="text" class="form-control" name="subject" placeholder="Subject"><br>
+        <input type="email" class="form-control" name="email" placeholder="E-mail"><br>
+        <textarea class="form-control" name="message" placeholder="How can we help you?"></textarea><br>
+        <a class="btn btn-primary" href="/home" role="button">Send Query</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

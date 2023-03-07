@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+
+
+  <!-- Custom Style CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/frontpage_style.css" />
+  <title>Browse Books</title>
+</head>
+
+<body style="background-color:#606060;">
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-dark fixed-top">
+     <h5 style="font-size:35px;color:white;font-family: 'Trebuchet MS', sans-serif;" class="my-0 mr-md-auto font-weight-normal">The Reading Room</h5><h4 style="font-size:20px;margin-left:-105px;color:white;font-family: 'Trebuchet MS', sans-serif;" class="my-0 mr-md-auto font-weight-normal">The Next Generation Book Recommendation System</h4>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/home">Home</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/trendingbooks">Trending Books</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/browse">Recommendations</a>
+        <a style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;" class="p-2" href="/contactus">Contact Us</a>
+      </nav>
+      <a class="btn btn-outline-primary" href="/logout" style="color:white;font-family:'Trebuchet MS', sans-serif;">Log Out</a>
+</div>
+
+<div class="container" style="background-color:#606060;" >
+<div class="row">
+    <div class="col-md-12" style="margin-top:80px;">
+        <h1 style="color:yellow;font-size:38px;font-family: 'Trebuchet MS', sans-serif;">Type Book Name Below To Get Personalized Recommendations</h1>
+        <form action="/recommend_books" method="post">
+            <input name="user_input" type="text" class="form-control"><br>
+            <input type="submit" class="btn btn-lg btn-primary">
+        </form>
+    </div>
+
+    {% if data %}
+
+     {% for i in data %}
+        <div class="col-md-3" style="margin-top:50px;">
+            <div class="card bg-dark " style="height:380px;width:260px;">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{i[2]}}" height="200" width="200">
+                    <p style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;">{{i[0]}}</p>
+                    <h4 style="color:white;font-size:20px;font-family: 'Trebuchet MS', sans-serif;">Author - {{i[1]}}</h4>
+                </div>
+            </div>
+        </div>
+     {% endfor %}
+    {% endif %}
+</div>
+</div>
+
+
+</body>
+</html>
